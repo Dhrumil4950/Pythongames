@@ -2,9 +2,9 @@ import turtle
 import time
 import random
 WIDTH, HEIGHT = 500, 500
-COLORS = ['red', 'pink', 'green','orange', 'black', 'purple','brown','cyan','yellow','blue']
+COLORS = ['red', 'pink', 'green','orange', 'black', 'purple','brown','cyan','yellow','blue'] # Selects some colors regarding user input for e.g.: user input 3 Racers: only first 3 colors of turtle race.
 
-def get_num_racers():
+def get_num_racers(): #Defenition asks user to give input from range 2 to 10 to race...
 	racers = 0
 	while True:
 		racers = input('Enter the number of racers (2 - 10): ')
@@ -18,7 +18,7 @@ def get_num_racers():
 			return racers
 		else:
 			print('Number is not in range!')
-def race(colors):
+def race(colors):   # choose colors of the number of racers
 	turtles = create_turtles(colors)
 
 	while True: 
@@ -31,7 +31,7 @@ def race(colors):
 			if y >= HEIGHT//2 - 10:
 				return colors[turtles.index(racer)]
 
-def create_turtles(colors):
+def create_turtles(colors):  # alline turtles in one line of choosen colors. put them on START Line of Race track 
 	turtles = []
 	spacingx = WIDTH // (len(colors) + 1)
 	for i, color in enumerate(colors):
@@ -47,7 +47,7 @@ def create_turtles(colors):
 	return turtles
 
 
-def init_turtle():
+def init_turtle():  # setting screen width, height and title using this definition
 	screen = turtle.Screen()
 	screen.setup(WIDTH, HEIGHT)
 	screen.title('Turtles are racing')
@@ -59,7 +59,7 @@ init_turtle()
 random.shuffle(COLORS)
 colors = COLORS[:racers]
 winner = race(colors)
-print("The winner is turtle with color:", winner)
+print("The winner is turtle with color:", winner)  # Will display the winner with the color specified of winner
 time.sleep(5)
 
-#create_turtles(colors)
+
